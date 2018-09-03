@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Simbologia para Mapeamento de Referência</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-globe"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>Prêmio geoforall ibero-americano 2018</h1>
+								<p>Simbologia para mapeamento de referência em pequena escala: automatização e compartilhamento dos símbolos.</p>
+								<p>Flávia Silveira</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#intro">Intro</a></li>
+								<li><a href="#work">Plugin</a></li>
+								<li><a href="#about">Github</a></li>
+								<li><a href="#contact">Sobre</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Intro -->
+							<article id="intro">
+								<h2 class="major">Intro</h2>
+								<span class="image main"><img src="images/carta.png" alt="" /></span>
+								<p>No Brasil, a simbologia padronizada para a representação cartográfica de feições em pequenas escalas (escalas-padrão de 1:1.000.000, 1:500.000, 1:250.000, 1:100.000, 1:50.000 e 1:25.000) é definida pelo Manual Técnico T34-700 – Convenções Cartográficas, para cartas topográficas de referência com a característica de serem contínuas, homogêneas e articuladas. O presente trabalho visa apresentar as etapas de desenvolvimento das soluções encontradas para automatizar o processo de aplicação da simbologia proposta pelo Manual Técnico T34-700 para feições representadas em cartas topográficas de pequenas escalas, no contexto brasileiro, bem como, para realizar o armazenamento e compartilhamento dos símbolos. A automatização do processo foi possível através do desenvolvimento de um plugin no ambiente do software de geoprocessamento de código aberto QGIS, por meio da linguagem de programação Python, enquanto que o armazenamento e o compartilhamento  dos símbolos foi realizado através do sistema de controle Github, o qual possui versão e distribuição livre e código aberto. </p>
+								<hr />
+								<h2 class="major">Arquitetura do Sistema</h2>
+								<span class="image main"><img src="images/arq.png" alt="" /></span>
+								<p>A arquitetura desenvolvida para a aplicação  apresenta o funcionamento do sistema, de modo a compreender que os arquivos em formato shapefile armazenados no banco de dados são carregados através da interação entre o QGIS e o plugin desenvolvido.</p>
+								<p>As simbologias pré-definidas são utilizadas pelo plugin de forma a serem aplicadas nas camadas selecionadas, e as mesmas passam a ser representadas com a simbologia desejada. As simbologias pré-definidas são armazenadas no github, sendo que o usuário pode fazer o download dos arquivos no computador e alocando-os em uma pasta, essa por sua vez pode ser referenciada pelo plugin e aplicada às camadas do banco de dados ou em outros projetos no software QGIS.</p>
+							</article>
+
+						<!-- Work -->
+							<article id="work">
+								<h2 class="major">AUTOMATIZAÇÃO: PLUGIN</h2>
+								<span class="image main"><img src="images/plugin.png" alt="" /></span>
+								<p>O plugin foi desenvolvido utilizando a linguagem de programação Python (bibliotecas  PyQGIS: e Psycopg2) o gerenciador de banco de dados PostgreSQL em conjunto com o PostGIS, o software de geoprocessamento QGIS e o programa QtDesign. para o desenvolvimento da interface. A interface do plugin desenvolvido, apresenta as funcionalidades enumeradas e abaixo descritas:</p>
+								<p><ol>
+									<li>Selecionar a classe de dados a qual deseja-se trabalhar;</li>
+									<li>Conectar-se ao banco de dados;</li>
+									<li> Selecionar na combo box a camada do banco a qual deseja-se aplicar a simbologia;</li>
+									<li>Selecionar na combo box a escala de representação dos dados (1:25.000, 1:50.000, 1:100.000, 1:250.000, 1:500.000 ou 1:1.000.000;</li>
+									<li>Selecionar na combobox a simbologia desejada;</li>
+									<li>Selecionar a partir de um arquivo “.qml” a simbologia desejada;</li>
+								</ol></p>
+							</article>
+
+						<!-- About -->
+							<article id="about">
+								<h2 class="major">COMPARTILHAMENTO: GITHUB</h2>
+								<span class="image main"><img src="images/git.png" alt="" /></span>
+								<p>No sistema de controle Github, foi criado um repositório mapeamentoGrandeEscala, os formatos dos arquivos escolhidos para o compartilhamento foram SLD (Styled Layer Descriptor) e QML (QGIS Layer Style File)</p>
+								<p>A fim de manter a interoperabilidade e padronização dos arquivos, esses foram organizados conforme o nome das classes estabelecidas pela ET-EDGV (Especificação Técnica para Estruturação de Dados Geoespaciais Vetoriais).</p>
+							</article>
+
+						<!-- Contact -->
+							<article id="contact">
+								<h2 class="major">Contato</h2>
+								<h3>Flávia Silveira</h3>
+								<blockquote>Mestranda do Programa de Ciências Geodésicas da Universidade Federal do Paraná, Brasil.<br />
+								Orientadora Silvana Philippi Camboim</blockquote>
+								<ul class="icons">
+									<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+									<li><p>flasilveira.silveira@gmail.com</p></li>
+								</ul>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Flávia Silvera. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
